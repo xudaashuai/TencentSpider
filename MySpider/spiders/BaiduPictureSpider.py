@@ -7,8 +7,6 @@ import json, psycopg2, re
 # 15120954
 import sys
 
-conn = psycopg2.connect("host=localhost port=5439 user=postgres dbname=postgres")
-cur = conn.cursor()
 key = ['KRhxgE8XUjk02QQ7H8Grp4SIBW0S3KCj']
 
 api_url = 'http://api.map.baidu.com/panorama/v2?ak={1}&width=1024&height=512&panoid={0}'

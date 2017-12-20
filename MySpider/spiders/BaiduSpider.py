@@ -30,9 +30,6 @@ def _get_list(attr, json, default=None):
             yield default
 
 
-#
-conn2 = psycopg2.connect("host=localhost port=5439 user=postgres dbname=postgres")
-cur2 = conn2.cursor()
 api_url = 'http://api.map.baidu.com/place/v2/search?query={0}&page_size=20&page_num={1}&scope=1&region=武汉&output=json&ak={2}'
 
 

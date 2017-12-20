@@ -40,10 +40,8 @@ def _get_list(attr, json, default=None):
             yield default
 
 
-#
-conn2 = psycopg2.connect("host=localhost port=5439 user=postgres dbname=postgres")
-cur2 = conn2.cursor()
-api_url = u'http://apis.map.qq.com/ws/place/v1/search?' \
+
+api_url = 'http://apis.map.qq.com/ws/place/v1/search?' \
           'boundary=region(北京,0)' \
           '&keyword={0}' \
           '&page_size=20' \

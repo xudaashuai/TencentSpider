@@ -37,9 +37,7 @@ def _get_list(attr, json, default=None):
             yield default
 
 
-#
-conn2 = psycopg2.connect("host=localhost port=5439 user=postgres dbname=postgres")
-cur2 = conn2.cursor()
+
 api_url = 'http://apis.map.qq.com/ws/streetview/v1/getpano?id=10011504120403141232200&'\
           'radius=100&key={'
 

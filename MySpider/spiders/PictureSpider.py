@@ -11,8 +11,6 @@ import json, psycopg2, re
 # 15120954
 import sys
 
-conn = psycopg2.connect("host=localhost port=5439 user=postgres dbname=postgres")
-cur=conn.cursor()
 key = ['AFLBZ-2LJRU-AFKVM-4FOWG-SPY5F-EIBAK',
        'ZHXBZ-IGXWW-QCXRZ-RHKET-AKJL5-IXF3P',
        'GHQBZ-2TTW6-H3BSF-MKEDU-ISHBJ-LRB2J',
