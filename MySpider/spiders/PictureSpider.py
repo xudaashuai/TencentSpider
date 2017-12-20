@@ -78,7 +78,6 @@ class PictureSpider(Spider):
         else:
             f2=open('I:/北京腾讯街景图片/'+'{0}_{1}_{2}'.format(meta['id'],meta['lat'],meta['lng'])+'.jpg','wb+')
             f2.write(response.body)
-
             f2.flush()
             f2.close()
             self.ind+=1
