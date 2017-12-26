@@ -28,9 +28,8 @@ LOG_LEVEL='INFO'
 # See also autothrottle settings and docs
 #DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
-CONCURRENT_REQUESTS_PER_DOMAIN = 100
-DOWNLOAD_DELAY = 0
-CONCURRENT_REQUESTS_PER_IP = 100
+CONCURRENT_REQUESTS_PER_DOMAIN = 10
+DOWNLOAD_DELAY = 0.1
 # Disable cookies (enabled by default)
 #COOKIES_ENABLED = False
 

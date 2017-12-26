@@ -3,11 +3,12 @@ from scrapy import *
 from scrapy.exceptions import CloseSpider
 from scrapy.selector import Selector
 from scrapy.http import HtmlResponse
-import json, psycopg2, re
+import json, psycopg2, re,pymysql
 # 15120954
 import sys
 
-
+conn = pymysql.connect(host='localhost',port=3306,user='root',passwd='admin',db='tencent',charset='utf8')
+cur = conn.cursor()
 key = [
        'NQLBZ-Q2FKS-LBUOX-6H3VZ-3FI35-KQFRC',
        '6XDBZ-6ANC3-F5Z3Z-3CVPN-5MSEZ-7RB3S',
@@ -54,13 +55,9 @@ class TencentSpider(Spider):
     index = 0
     ind=0
     def start_requests(self):
-        cur2.execute("select name from poi.gaodepois ")
-        keywords = cur2.fetchall()
-        f = open('1.txt','r+')
-        start_index=int(f.read())
-        f.close()
+        keywords = ['a','b']
         se=set()
-        for i in range(start_index, keywords.__len__()):
+        for i in range(0, keywords.__len__()):
             k = keywords[i]
             if i % 100 == 0:
                 print (i / 100)
@@ -92,9 +89,9 @@ class TencentSpider(Spider):
                         heading = str(x['pano']['heading'])
                         pitch = str(x['pano']['pitch'])
                         zoom = str(x['pano']['zoom'])
-                cur2.execute(
+                cur.execute(
                     "insert into poi.bj_tencentpois values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
-                    "on conflict do nothing", (
+                    "", (
                         x['id'],
                         x['title'],
                         x['address'],
